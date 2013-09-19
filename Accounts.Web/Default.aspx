@@ -22,11 +22,6 @@
                                 <td>Net</td>
                                 <td><asp:Literal runat="server" ID="litNet" /></td>
                             </tr>
-                            <tr>
-                                <td>OER</td>
-                                <td>
-                                    <asp:Label runat="server" ID="litOer" /></td>
-                            </tr>
                         </tbody>
                     </table>
                     <br />

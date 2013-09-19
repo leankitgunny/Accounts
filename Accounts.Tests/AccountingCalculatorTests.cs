@@ -11,9 +11,9 @@ namespace Accounts.Tests
         public void CalculateProfit()
         {
             IAccountingCalculator calc = new AccountingCalculator();
-            decimal net = calc.CalculateNet(1000m, 750m);
+            decimal net = calc.CalculateNet(1000m, 1000m);
 
-            Assert.AreEqual(250m, net);
+            Assert.AreEqual(1000000m, net);
         }
 
         [TestMethod]
@@ -22,31 +22,6 @@ namespace Accounts.Tests
         {
             IAccountingCalculator calc = new AccountingCalculator();
             decimal net = calc.CalculateNet(-1000m, 1000m);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void NegativeExpenses()
-        {
-            IAccountingCalculator calc = new AccountingCalculator();
-            decimal net = calc.CalculateNet(1000m, -1000m);
-        }
-
-        [TestMethod]
-        public void CalculateOER()
-        {
-            IAccountingCalculator calc = new AccountingCalculator();
-            decimal net = calc.CalculateOER(1000m, 500m);
-
-            Assert.AreEqual(0.5m, net);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
-        public void ZeroRevenueWhenCalculatingOER()
-        {
-            IAccountingCalculator calc = new AccountingCalculator();
-            decimal net = calc.CalculateOER(0m, 1000m);
         }
     }
 }

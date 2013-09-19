@@ -12,6 +12,5 @@ namespace Accounts.BLL
         /// <param name="revenue">The revenue.</param>
         /// <param name="expenses">The expenses.</param>
         decimal CalculateNet(decimal revenue, decimal expenses);
-        decimal CalculateOER(decimal revenue, decimal expenses);
     }
 }
